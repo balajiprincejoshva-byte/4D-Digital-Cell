@@ -3,7 +3,9 @@
 
 > **REGULATORY & CLINICAL RESEARCH DISCLAIMER**  
 > *RESEARCH & EDUCATION PROTOTYPE ONLY:* This computational biology workstation is designed for research hypothesis generation, exploratory analysis, and education. It is not a clinically validated digital twin and must not be used independently for clinical diagnosis, treatment decisions, or patient care. Simulated gene interventions represent mathematical model counterfactuals rather than proven wet-lab causal mechanisms.
+---
 
+## LIVE DEMO - [Project Purpose & Scientific Background](https://4-d-digital-cell.vercel.app)
 ---
 
 ## 1. Project Purpose & Scientific Background
