@@ -16,6 +16,25 @@ $$\text{Data Ingestion} \longrightarrow \text{Quality Control} \longrightarrow \
 
 ---
 
+## 📸 Workstation Screenshots
+
+### 1. Workstation Overview & Pipeline Monitor
+*High-level workstation overview displaying active dataset metrics, QC filtration thresholds, and the end-to-end research pipeline.*
+
+![Workstation Overview](docs/screenshots/01_workstation_overview.png)
+
+### 2. Machine Learning Cellular State Predictor
+*Supervised Random Forest & regularized classifiers with stratified evaluation, confusion matrix, ROC/F1 metrics, and Gini feature importance rankings.*
+
+![AI Cellular State Predictor](docs/screenshots/02_state_predictor.png)
+
+### 3. Interactive 4D WebGL Digital Cell Viewport
+*Real-time 3D cellular morphology with plasma membrane, organelles, 4D longitudinal timepoint progression (0h–48h), and cell-state trajectory overlays.*
+
+![4D Interactive Digital Cell](docs/screenshots/03_4d_digital_cell.png)
+
+---
+
 ## 2. Implemented Features (9 Working Modules)
 
 | Module | Features & Capabilities |
