@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* Warm app canvas and surfaces */
+    --app-bg: #FFF1DF;
+    --surface: #FFF8EF;
+    --surface-raised: #FFFCF7;
+    --surface-recessed: #FFE1C4;
+    --surface-peach: #FFD2A8;
+    --surface-orange-wash: #FFEBD8;
+
+    /* Neobrutalist ink, outlines, and hard shadows */
+    --border-ink: #2B211B;
+    --shadow-ink: #2B211B;
+    --text-primary: #2B211B;
+    --text-secondary: #604331;
+    --text-muted: #806653;
+
+    /* Brand orange */
+    --accent: #FF6A00;
+    --accent-hover: #FF8128;
+    --accent-active: #E85B00;
+    --accent-strong: #C94900;
+    --accent-deep: #9F3800;
+    --accent-soft: #FFD0A6;
+    --accent-pale: #FFE6D0;
+
+    /* Controlled complementary highlights */
+    --highlight-yellow: #FFC857;
+    --highlight-cream: #FFF3C4;
+
+    /* Semantic statuses — keep semantically distinct */
+    --success: #226A45;
+    --success-soft: #D8F0DF;
+    --warning: #865000;
+    --warning-soft: #FFE9B5;
+    --danger: #B4232D;
+    --danger-soft: #FCE0E0;
+    --info: #315B87;
+    --info-soft: #DCEAF6;
+
+    /* Compact, deliberate corner geometry */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* Hard-edged neobrutalist elevation — no blur */
+    --border-width: 2px;
+    --shadow-sm: 3px 3px 0 var(--shadow-ink);
+    --shadow-md: 5px 5px 0 var(--shadow-ink);
+    --shadow-lg: 7px 7px 0 var(--shadow-ink);
+    --focus-ring: 3px solid var(--accent-strong);
+
+    /* Compatibility variables */
+    --bg-main: var(--app-bg);
+    --card-main: var(--surface);
+    --border-main: var(--border-ink);
+    --accent-cyan: var(--accent);
+    --accent-teal: var(--success);
+  }
+
+  body {
+    background-color: var(--app-bg);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+/* Reusable Neobrutalist Primitives */
+.neo-panel {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-panel--raised {
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-panel--recessed {
+  background: var(--surface-recessed);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-md);
+  box-shadow: 2px 2px 0 var(--shadow-ink);
+}
+
+.neo-primary {
+  color: var(--text-primary);
+  background: var(--accent);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-weight: 750;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.neo-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.neo-primary:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--shadow-ink);
+}
+
+.neo-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: 2px 2px 0 var(--shadow-ink);
+}
+
+.neo-secondary {
+  color: var(--text-primary);
+  background: var(--surface-raised);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  cursor: pointer;
+}
+
+.neo-secondary:hover:not(:disabled) {
+  background: var(--surface-peach);
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-secondary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--shadow-ink);
+}
+
+.neo-inset {
+  color: var(--text-primary);
+  background: var(--surface-recessed);
+  border: var(--border-width) solid var(--border-ink);
+  border-radius: var(--radius-md);
+}
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border: 1.5px solid var(--border-ink);
+  border-radius: var(--radius-sm);
+  box-shadow: 1.5px 1.5px 0 var(--shadow-ink);
+}
+
+/* Custom Neobrutalist Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-recessed);
+  border-left: 1.5px solid var(--border-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 1.5px solid var(--border-ink);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Subtle dot-grid for technical neobrutalist atmosphere */
+.grid-bg {
+  background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+}
+
+/* Presentation Deck Smooth Transition Animations */
+@keyframes slideEnterNext {
+  from {
+    opacity: 0;
+    transform: translateX(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideEnterPrev {
+  from {
+    opacity: 0;
+    transform: translateX(-24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-slide-next {
+  animation: slideEnterNext 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-prev {
+  animation: slideEnterPrev 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
